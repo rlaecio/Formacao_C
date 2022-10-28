@@ -15,8 +15,7 @@ int main()
 
         if (aux < n-1) {
             std::cout << ", ";
-        }
-        else {
+        } else {
             std::cout << ". ";
         }        
     }
