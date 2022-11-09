@@ -2,7 +2,7 @@
 
 int main(){
 
-    int digitado, num, invertido, digito;  
+    long int digitado, num, invertido, digito;  
 
     std::cout << "Digite numero inteiro: ";
     std::cin  >> digitado;
