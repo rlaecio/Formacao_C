@@ -12,8 +12,6 @@ void placar(int, int &, int &);
 
 int main() {
     int tabela[3][3];
-    
-
     int contador=0, jogador_1=0, jogador_2=0, resultado;
     do{
         iniciar(tabela);
