@@ -5,7 +5,7 @@ void iniciar(int tabela[][3]);
 char desenho(int bloco);         
 void tabuleiro(int tabela[][3]);          
 void movimentos(int tabela[][3], int); 
-int  contadorinuar(int * tabela[3]);   
+int  contadorContinuar(int * tabela[3]);   
 int  verificaGanhador(int * tabela[3]);        
 int  jogo(int tabela[][3]);           
 void placar(int, int &, int &); 
@@ -71,7 +71,6 @@ void movimentos(int tabela[][3], int jogador_) {
         check = tabela[linha][coluna] || linha<0 || linha>2 || coluna<0 || coluna>2;
         if(check)
             std::cout << "Essa casa não está vazia ou fora do intervalo 3x3" << std::endl;
-
     } while(check);
 
     if(jogador_== 0) {
@@ -81,7 +80,7 @@ void movimentos(int tabela[][3], int jogador_) {
     }
 }
 
-int contadorinuar(int tabela[][3]) {
+int contadorContinuar(int tabela[][3]) {
     for(int i = 0 ; i < 3 ; i++) {
         for(int j = 0 ; j < 3 ; j++) {
             if(tabela[i][j] == 0) {
@@ -97,7 +96,6 @@ int verificaGanhador(int tabela[][3]) {
 
     for(linha = 0 ; linha < 3 ; linha++){
         soma = 0;
-
         for(coluna = 0 ; coluna < 3 ; coluna++) {
             soma += tabela[linha][coluna];
         }
@@ -111,11 +109,9 @@ int verificaGanhador(int tabela[][3]) {
     
     for(coluna = 0 ; coluna < 3 ; coluna++){
         soma = 0;
-
         for(linha = 0 ; linha < 3 ; linha++) {
             soma += tabela[linha][coluna];
         }
-
         if(soma == 3) {
             return 1;
         }
@@ -155,8 +151,7 @@ int jogo(int tabela[][3]) {
         std::cout << std::endl << "Jogador " << 1 + rodada %2 << std::endl;
         movimentos(tabela, rodada%2);
         rodada++;
-
-        contador = contadorinuar(tabela);
+        contador = contadorContinuar(tabela);
         win  = verificaGanhador(tabela);
 
     }while(contador && !win);
